@@ -1,0 +1,139 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Header
+% Copyright (c) 2010 by tilo.mueller@rwth-aachen.de
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Document
+	% Font size and paper
+	\documentclass[11pt,twoside,a4paper,fleqn]{scrbook}
+	% Margin
+	\usepackage{anysize}
+	\marginsize{3cm}{3cm}{2cm}{2cm}
+	% Font
+	\usepackage[T1]{fontenc}
+
+% Fancy header and footer
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+	\fancyhf{}
+	% Centrical header  
+	\fancyhead[C]{\textsc{\nouppercase{\leftmark}}}
+	\renewcommand{\headrulewidth}{0.5pt}
+	% Centrical footer
+	\fancyfoot[C]{\thepage}
+	\renewcommand{\footrulewidth}{0pt}
+
+% Fancy chapter page
+	% fncychap: Sonny Lenny Glenn Conny Rejne Bjarne Bjornstrup PetersLenny
+	%\usepackage[PetersLenny]{fncychap}
+	% or titlesec:
+	%\usepackage{titlesec}
+	%\titleformat{\chapter}{\bf\Huge}{\thechapter\quad}{0em}{}
+	% or:
+	\makeatletter
+	\def\@makechapterhead#1{
+	  \vspace*{100\p@}
+	  {\parindent \z@ 
+	    {\raggedleft %\reset@font
+	      \fontsize{15ex}{15ex}%\selectfont
+	      \textsf\thechapter\par\nobreak}
+	    \par\nobreak
+	    \interlinepenalty\@M
+	    {\raggedright \Huge \textsf{\textsc{#1}}}
+	    \par\nobreak
+	    \leavevmode \leaders \hrule height 0.65ex \hfill \kern \z@
+	    \par\nobreak
+	    \vskip 100\p@
+	  }
+	}
+
+% Fancy toc title
+	% \renewcommand{\contentsname}{CONTENTS}
+	% or:
+	\def\tableofcontents{
+		\section*{
+			\centering CONTENTS
+		}
+		\@starttoc{toc}
+	}
+
+% Language, character set
+	% Umlauts
+	% \usepackage[latin1]{inputenc}
+	\usepackage[utf8]{inputenc}
+	% Phonetics
+	% \usepackage[safe]{tipa}
+	% Symbols
+	% \usepackage{latexsym}
+
+% Figures
+	% Graphics
+	\usepackage[]{graphicx,float,subfigure} 
+	% Frame 
+	\usepackage{fancybox}
+	% Code listings
+	\usepackage{listings,algorithm,algorithmic}
+	% Image subdir
+	\graphicspath{{images/}}
+	% Formatting captions
+	\usepackage[small,indent]{caption}
+
+% Bibliography
+%\usepackage[sectionbib]{natbib}
+%\usepackage{chapterbib}
+\usepackage{cite}
+
+% Links within pdf file
+	\usepackage[]{hyperref}
+	\hypersetup{
+		colorlinks=true,
+		linkcolor=blue,
+		citecolor=blue,
+		filecolor=blue,
+		pagecolor=blue,
+		urlcolor=blue,
+		breaklinks=true,
+		bookmarksnumbered=true,
+		pdfstartpage={1},
+		pdftitle={TITLE}, %TODO
+		pdfsubject={SUBJECT}, %TODO
+		pdfauthor={AUTHOR}, %TODO
+		pdfproducer={LaTex with hyperref}
+	}
+
+% Misc
+	% Appendix
+	\usepackage{appendix}
+	% Date
+	\usepackage{times}
+	% Glossary
+	\usepackage[refpage]{nomencl}
+	%Index 
+	\usepackage{makeidx}
+	\makeindex
+	% Math
+	\usepackage{amssymb,amsfonts,amsmath}
+	% Allow the use of underscore in normal text
+	\usepackage{underscore}
+	% Hyphenation
+	\hyphenation{donothyphenatethisword}
+
+% Commands
+	% new introduced terms
+	\newcommand{\new}[1]{\textit{#1}}
+	% code terms
+	\newcommand{\code}[1]{\texttt{#1}}
+	% comment out multiple lines
+	\newcommand{\ignore}[1]{}
+
+
+% No headers on empty pages before new chapter
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{plain}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{plain}\cleardoublepage}

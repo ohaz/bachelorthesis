@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Main Document
+% Copyright (c) 2010 by tilo.mueller@rwth-aachen.de
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{header}
+
+\begin{document}
+
+% a)
+	% Alphabetic page numbers
+	\pagenumbering{alph}
+
+	% Title 
+	\include{title}
+
+% i)
+	% Roman page numbers; alternative: \pagenumbering{off}
+	\pagenumbering{roman}
+
+	% No indent for paragraphs
+	\setlength{\parskip}{1.3ex plus 0.2ex minus 0.2ex}
+	\setlength{\parindent}{0pt}
+
+	% Pre content
+	\include{declaration}
+	\include{abstract}
+
+	% Table of Contents
+	% \setcounter{tocdepth}{1} % less details
+	% \listoftables
+	% \listoffigures
+	% \addcontentsline{toc}{section}{References}
+	\tableofcontents
+	\newpage \cleardoublepage	
+
+% 1)
+	% Arabic page numbers
+	\pagenumbering{arabic}
+
+	% Fancy header / footer for chapter pages
+	\fancypagestyle{plain}{
+		\fancyhf{}
+		\renewcommand{\headrulewidth}{0pt}
+		\fancyfoot[LE,RO]{\thepage}
+	}
+
+	% Fancy header / footer for normal pages
+	\pagestyle{fancy}
+	\fancyhf{}
+	\fancyfoot[LE,RO]{\thepage}
+	\fancyhead[LO]{\leftmark}
+	\fancyhead[RE]{\rightmark}
+
+	% Actual content
+	\include{introduction}
+	\include{similar}
+	\include{methodology}
+	\include{results}
+	\include{conclusion}
+	\include{addendum}
+
+	\bibliography{citations}
+	\bibliographystyle{plain}
+
+\end{document}

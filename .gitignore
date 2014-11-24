@@ -110,3 +110,6 @@ sympy-plots-for-*.tex/
 
 # Windows
 *Thumbs.db
+
+# Custom
+script/test_out

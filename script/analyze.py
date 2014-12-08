@@ -1,9 +1,8 @@
 import csv
 import sys
 import logging
+import numpy
 from optparse import OptionParser
-
-f = open('results.csv', 'rt')
 
 # python2 backward compatibility
 try:
@@ -26,24 +25,27 @@ if opts.r2 is None:
   opts.r2 = input('Row 2: ')
 
 try:
-  reader = csv.reader(f)
-  start = True
-  input_rows = {}
-  
-  for row in reader:
-    if start:
-      start = False
-      for i,s in enumerate(row):
-        if s == opts.r1:
-          input_rows[i] = {'name': opts.r1, 'entries': []}
-        elif s == opts.r2:
-          input_rows[i] = {'name': opts.r2, 'entries': []}
-          
-    else:
-      for i,s in enumerate(row):
-        if i in input_rows:
-          input_rows[i]['entries'].append(s)
-    
-  print(input_rows)      
+  t = numpy.loadtxt(open('results.csv', 'rb'), delimiter=',', skiprows=1)
+  print(numpy.corrcoef(t[4], t[5]))
+  #f = open('results.csv', 'rt')
+  #reader = csv.reader(f)
+  #start = True
+  #input_rows = {}
+  #
+  #for row in reader:
+  #  if start:
+  #    start = False
+  #    for i,s in enumerate(row):
+  #      if s == opts.r1:
+  #        input_rows[i] = {'name': opts.r1, 'entries': []}
+  #      elif s == opts.r2:
+  #        input_rows[i] = {'name': opts.r2, 'entries': []}
+  #        
+  #  else:
+  #    for i,s in enumerate(row):
+  #      if i in input_rows:
+  #        input_rows[i]['entries'].append(s)
+  #  
+  #print(input_rows)      
 finally:
-  f.close()
+  pass

@@ -25,10 +25,22 @@ Somit spiegelt die demographische Verteilung der Studienteilnehmer nicht die Ges
 \end{figure}
 Auch die Auswertungen zu der derzeitigen Arbeitsbeschäftigung zeigen ein ähnliches Bild - 77,0\% der Teilnehmer (659) waren zum Zeitpunkt der Studiendurchführung Studenten. Dahingegen sind nur 2,0\% in Ausbildung und 15,0\% berufstätig.
 Das arithmetische Mittel der selbst eingeschätzten Informatikkenntnisse liegt auf einer Skala von 1 (keine) bis 5 (sehr hohe) bei 3,3. Hier wurde angenommen, dass im Durchschnitt ein Wert von 3,0 erreicht wird, da dies der Mittelwert der auszuwählenden Optionen war und man bei spezialisiertem Wissen von einer Normalverteilung, die ihr Maximum ungefähr in der Mitte hat, ausgehen kann. Dass dieser Wert sehr nah an dem von mir erwartetem Mittelwert von 3,0 liegt deutet darauf hin, dass die Umfrage trotz der geringen Anzahl an Realschülern und Hauptschülern dennoch Relevanz hat, wenn man weiterhin annimmt, dass der Wissenstand im Bereich Informatik hier der ausschlaggebende Faktor ist und nicht der Bildungsstand.
-Diese Statistik verschiebt sich stark, wenn man die Frage nach den Kenntnissen in der IT-Sicherheit betrachtet. Hier liegt das arithmetische Mittel bei 2,6, was um 0,6 niedriger ist als das arithmetische Mittel der IT Kenntnisse.\\
+Diese Statistik verschiebt sich stark, wenn man die Frage nach den Kenntnissen in der IT-Sicherheit betrachtet. Hier liegt das arithmetische Mittel bei 2,6, was um 0,6 niedriger ist als das arithmetische Mittel der IT Kenntnisse.\\ In Tabelle \ref{4sitsecteach} lässt sich deutlich sehen, dass ein Bildungsabschluss in der Informatik sich auf die Kenntnisse im Bereich IT-Sicherheit auswirkt. Die prozentualen Angaben sind hier spaltenweise zu lesen - zum Beispiel schätzen 39,7\% derjenigen, die einen Abschluss im IT-Bereich haben ihre Kenntnisse im Bereich IT-Sicherheit auf eine 4 ein. Aus den prozentualen Angaben lässt sich schnell sehen, dass diejenigen, die keinen Abschluss im IT-Bereich haben sich zum Großteil auf der unteren Hälfte der IT-Sicherheit antragen, wohingegen es bei denjenigen mit Abschluss im Bereich 4 und 5 schon über 50\% der Teilnehmer eingetragen haben.
 Die weiteren demographischen Ergebnisse sind der Übersichtlichkeit halber in Tabelle \ref{demoqna} zusammengefasst.\\
-%TODO: Korellation - Kein Bildungsabschluss in der Informatik bedeuted geringeres Wissen in IT Security: 77,5\% der Teilnehmer haben keinen Bildungsabschluss in der Informatik oder einem anderen IT-nahem Fachbereich.
-%Grafisch darstellen: steigende Funktion (Excel Tabelle, Pivottabelle, Youtube, Berechnung signifikant)
+\begin{table}
+	\begin{tabular}[]{ l c | c | c | c | c }
+	& & \multicolumn{3}{c |}{Haben Sie einen Bildungsabschluss in der Informatik} &\\
+	& & \multicolumn{3}{c |}{oder einem anderen IT-nahem Fachbereich?} &\\ \hline
+	& & Ja & Nein & Gesamt\\ \hline
+	Haben Sie Kenntnisse im Bereich& 1 & 3 (1,6\%) & 138 (20,9\%) & 141\\
+	IT-Sicherheit?& 2 & 23 (12,5\%) & 238 (36,0\%) & 261\\
+	(1: gar nicht, 5: sehr)& 3 & 59 (32,1\%) & 193 (29,2\%) & 252\\
+	& 4 & 73 (39,7\%) & 78 (11,8\%) & 151\\
+	& 5 & 26 (14,1\%) & 14 (2,1\%) & 40\\ \hline
+	Gesamt & & 184 & 661 & 845\\ \hline
+	\end{tabular}
+	\caption{Haben Sie Kenntnisse im Bereich IT-Sicherheit? x Haben Sie einen Bildungsabschluss in der Informatik oder einem anderen IT-nahem Fachbereich?}\label{4sitsecteach}
+\end{table}
 
 \begin{table}
 	\begin{tabular}[]{ l | l | c | c }
@@ -151,7 +163,8 @@ Die aufgeführten Argumente lassen darauf schließen, dass die Hypothese mit Ein
 	\caption{Wie viele Google Accounts besitzen Sie? x Bietet Google die Möglichkeit den eigenen Account zu löschen?}\label{4samountdelete}
 \end{table}
 
-Zur Kategorie "Vertrauen in Google" (\ref{itm:Kat2}) lässt sich im Allgemeinen sagen, dass die Nutzer Google nicht vertrauen. Grafik \ref{datensicher} zeigt dies sehr deutlich auf - 33,8\% der Teilnehmer sind der Meinung, dass ihre Daten bei Google überhaupt nicht sicher sind. Nur 7,9\% der Teilnehmer sind der Meinung, dass ihre Daten bei Google tatsächlich sicher sind. "Wie stark vertrauen Sie Google?" zeigt ein ähnliches Bild, wie in Grafik \ref{vertrauen} sehr gut zu sehen ist. Interessant ist, dass trotz der kürzlichen Veröffentlichungen von Edward Snowden nur 20,0\% der Teilnehmer angegeben haben, dass es in der Vergangenheit ein Ereignis gab, welches ihr Vertrauen in Google stark beeinflusst hat. Diejenigen, die mit Ja geantwortet haben, haben in dem Kommentarfeld dennoch sehr häufig Antworten gegeben die mit der NSA zusammenhängen.
+Zur Kategorie "Vertrauen in Google" (\ref{itm:Kat2}) lässt sich im Allgemeinen sagen, dass die Nutzer Google nicht vertrauen. Grafik \ref{datensicher} zeigt dies sehr deutlich auf - 33,8\% der Teilnehmer sind der Meinung, dass ihre Daten bei Google überhaupt nicht sicher sind. Nur 7,9\% der Teilnehmer sind der Meinung, dass ihre Daten bei Google tatsächlich sicher sind. "Wie stark vertrauen Sie Google?" zeigt ein ähnliches Bild, wie in Grafik \ref{vertrauen} sehr gut zu sehen ist. Interessant ist, dass trotz der kürzlichen Veröffentlichungen von Edward Snowden nur 20,0\% der Teilnehmer angegeben haben, dass es in der Vergangenheit ein Ereignis gab, welches ihr Vertrauen in Google stark beeinflusst hat. Diejenigen, die mit Ja geantwortet haben, haben in dem Kommentarfeld dennoch sehr häufig Antworten gegeben die mit der NSA zusammenhängen.\\
+Tabelle \ref{vertrauenothers} zeigt auf, dass Google im Bezug auf Vertrauen von den 6 angebotenen Firmen im Mittelfeld liegt. Facebook hat weit mehr Antworten im 1-2 Bereich bekommen, Paypal, Amazon und Microsoft weniger als Google. Apple und Google liegen ungefähr gleich auf.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{images/datensicher}\\
@@ -162,6 +175,18 @@ Zur Kategorie "Vertrauen in Google" (\ref{itm:Kat2}) lässt sich im Allgemeinen 
 \includegraphics[scale=0.55]{images/vertrauen}\\
 \caption{Wie stark vertrauen Sie Google}\label{vertrauen}
 \end{figure}
+\begin{table}
+	\begin{tabular}[]{ c || c | c | c | c | c | c}
+	& \multicolumn{5}{c}{Ich vertraue darauf, dass diese Firma meine Privatsphäre schützt:}\\
+	& Microsoft & Facebook & Apple & Google & Paypal & Amazon\\ \hline \hline
+	1 &191 (22,3\%)&587 (68,6\%)&323 (37,7\%)&295 (34,5\%)&131 (15,3\%)&186 (21,7\%)\\ \hline
+	2 &197 (23,0\%)&176 (20,7\%)&220 (25,7\%)&269 (31,4\%)&123 (14,4\%)&197 (23,0\%)\\ \hline
+	3 &250 (29,2\%)&56 (6.5\%)&185 (21,6\%)&170 (19,9\%)&168 (19,6\%)&217 (25,4\%)\\ \hline
+	4 &166 (19,4\%)&21 (2,5\%)&90 (10,5\%)&88 (10,3\%)&220 (25,7\%)&171 (20,0\%)\\ \hline
+	5 &52 (6,1\%)&16 (1,9\%)&38 (4,4\%)&34 (4,0\%)&214 (25,0\%)&85 (9,9\%)\\ \hline
+	\end{tabular}
+	\caption{Ich vertraue darauf, dass diese Firma meine Privatsphäre schützt}\label{vertrauenothers}
+\end{table}	
 TODO AREA:\\
 "Meine Daten sind bei Google sicher" und "Durch die Nutzung von Google Diensten gebe ich zu viel von meiner Privatsphäre auf" korrelieren nur relativ schwach mit r(854) = -0.29. Es ergibt sich also eine indirekte Korrelation, die allerdings nur sehr schwach ist. Eine leichte Tendenz ist dennoch vorhanden.
 

@@ -1,3 +1,4 @@
+#!/usr/bin/python2
 # -*- coding: UTF-8 -*-
 from pylab import *
 import sys
@@ -8,11 +9,11 @@ if len(sys.argv) > 1:
 
 fig = plt.figure(1)
 ax = fig.add_subplot(111)
-ax.bar([0.5], [209], width=0.9, facecolor='#ff0000', label=u"1 (209)", align="center")
-ax.bar([1.5], [242], width=0.9, facecolor='#00ff00', label=u"2 (242)", align="center")
-ax.bar([2.5], [276], width=0.9, facecolor='#0000ff', label=u"3 (276)", align="center")
-ax.bar([3.5], [113], width=0.9, facecolor='#ffff00', label=u"4 (113)", align="center")
-ax.bar([4.5], [16], width=0.9, facecolor='#00ffff', label=u"5 (16)", align="center")
+ax.bar([0.5], [311], width=0.9, facecolor='#ff0000', label=u"1 (311)", align="center")
+ax.bar([1.5], [323], width=0.9, facecolor='#00ff00', label=u"2 (323)", align="center")
+ax.bar([2.5], [185], width=0.9, facecolor='#0000ff', label=u"3 (185)", align="center")
+ax.bar([3.5], [34], width=0.9, facecolor='#ffff00', label=u"4 (34)", align="center")
+ax.bar([4.5], [3], width=0.9, facecolor='#00ffff', label=u"5 (3)", align="center")
 #ax.bar([5.5], [3], width=0.9, facecolor='#ff00ff', label=u"Schutzmaßnahmen", align="center")
 #ax.bar([6.5], [7], width=0.9, facecolor='#000000', label="Demographische Fragen", align="center")
 #ax.bar([7.5], [8], width=0.9, facecolor='#9999ff', label="keine Antwort (8)", align="center")

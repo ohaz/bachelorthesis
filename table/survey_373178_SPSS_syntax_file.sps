@@ -5,7 +5,7 @@ PRESERVE LOCALE.
 SET LOCALE='en_UK'.
 GET DATA
  /TYPE=TXT
- /FILE='survey_373178_SPSS_data_file.dat'
+ /FILE='C:\Users\Richard\Documents\GitHub\bachelorthesis\table\survey_373178_SPSS_data_file.dat'
  /DELCASE=LINE
  /DELIMITERS=","
  /QUALIFIER="'"

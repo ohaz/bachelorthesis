@@ -102,8 +102,8 @@ Die weiteren demographischen Ergebnisse sind der Übersichtlichkeit halber in Ta
 Bei Betrachtung des Konstrukts \glqq Nutzung der Google Dienste\grqq\ fällt sofort auf, dass diese sehr aktiv genutzt werden. Auf \glqq Wie aktiv nutzen Sie die folgenden Dienste? Google Suche:\grqq\ antworteten fast 90\% mit 4 und 5, 74,7\% antworteten mit 5. Auch nutzen über die Hälfte der Umfrageteilnehmer (58,9\%) Android mit einer Aktivität von 4 oder 5.
 
 Die Dienste die tatsächlich zu Google gehören wurden von einem großem Anteil der Teilnehmer auch Google zugeordnet. Android, Picasa, Google+, Hangouts, Gmail, Youtube und Chrome wurden je von mehr als 50\% der Teilnehmern Google zugeordnet. Dabei ist die Zugehörigkeit von Picasa zu Google mit 51,2\% am unbekanntesten, Google+ und Gmail sind mit 97,6\% und 92,4\% am häufigsten angewählt worden. Die Dienste die nicht zu Google gehören wurden auch zum Großteil nicht zugeordnet, den größten Wert hat Whatsapp mit 6,4\%, was ein sehr geringer Wert ist.
+Die Mehrheit der Teilnehmer (64,7\%) besitzt einen Google Account, 21,7\% besitzen zwei oder mehr Accounts .
 
-Die Mehrheit der Teilnehmer (64,7\%) besitzt einen Google Account, 21,7\% besitzen zwei oder mehr Accounts .\\
 Auch das Wissen der Umfrageteilnehmer zu Google ist zum Großteil gut. So wissen 85,9\% der Teilnehmer, dass Google auf Nutzer zugeschnittene Werbung anbietet und nur 3,0\% sind der Meinung, dass Google dies nicht tut. Ein ähnliches Bild zeigt sich bei der Frage nach den auf Nutzer zugeschnittenen Suchergebnissen. Hier sind mit 81,0\%  weniger der Teilnehmer der Meinung, dass Google dies anbietet, aber eine Rate von über 80\% ist immer noch als hoch anzusehen (siehe Tabelle \ref{fittingAdsAndSearch}).\\
 \begin{table}
 	\begin{tabular}[]{ l | l | c | c}
@@ -221,6 +221,13 @@ Die kürzere Variante um den Phi-Koeffizienten zu berechnen ist: $\phi = \sqrt{\
 
 Als weitere Methode tritt der Zusammenhangskoeffizient V nach Cramer auf. Er wird durch die folgende Formel bestimmt: $V = \sqrt{\frac{\chi^2}{n \cdot (min(l,k) - 1)}}$. Die Variable k entspricht hier der Anzahl der Kategorien der Zeilenvariablen, l der Anzahl der Kategorien der Spaltenvariablen. Diese Berechnung hat den Vorteil, dass sie auch bei Tabellen die größer als 2x2 sind funktioniert.
 
+\subsection{Pearson}
+\label{pearson}
+Die Pearson-r-Korrelation kann verwendet werden, um eine Beziehung zwischen zwei Variablen aufzustellen, die mindestens intervallskaliert sind. Sie geht auf Karl Pearson und Auguste Bravais zurück und berechnet sich mit der Formel $r = \frac{cov(x,y)}{s_x \cdot s_y}$ (nach \citet{statistikeinfuehrung}). Hierbei ist $cov(x,y)$ die Kovarianz der Variablen x und y, und $s_x$ und $s_y$ sind die Standardabweichungen von x und y.
+
+Mittels der Pearson Prüfgröße, die sich mit $t = \frac{r \cdot \sqrt[]{n - 2}}{\sqrt[]{1 - r^2}}$ berechnen lässt, kann nun die statistische Signifikanz dieser Korrelation bestimmt werden. Hierbei ist r der Wert den die Pearson-Korrelation ergeben hat und n die Anzahl der Untersuchungseinheiten.
+
+\subsection{Stärke des Zusammenhanges}
 Sämtliche Korrelationen werden nach \citet{statistikeinfuehrung} anhand Tabelle \ref{correlationrelevance} bewertet.
 
 \begin{table}
@@ -297,9 +304,32 @@ Die aufgeführten Argumente lassen darauf schließen, dass die Hypothese zwar ni
 	\caption{Wie viele Google Accounts besitzen Sie? x Bietet Google die Möglichkeit den eigenen Account zu löschen?}\label{4samountdelete}
 \end{table}
 
+\textit{Je mehr eine Person über Googles Datenschutz weiß, desto bewusster ist ihr das Aufgeben der Privatsphäre. (H2, \ref{itm:H1})}
 
-TODO AREA:\\
-"Meine Daten sind bei Google sicher" und "Durch die Nutzung von Google Diensten gebe ich zu viel von meiner Privatsphäre auf" korrelieren nur relativ schwach mit r(854) = -0.29. Es ergibt sich also eine indirekte Korrelation, die allerdings nur sehr schwach ist. Eine leichte Tendenz ist dennoch vorhanden.
+Tabelle \ref{4sadsprivacy} zeigt auf, dass \glqq Bietet Google auf Nutzer zugeschnittene Werbung an?\grqq\ und \glqq Durch die Nutzung von Google Diensten gebe ich zu viel meiner Privatsphäre auf?\grqq\ mit dem $\chi^2$-Test nur mit $\phi = 0,09$ korrelieren. Es kann also keine Korrelation nachgewiesen werden.
+\begin{table}
+	\begin{tabular}[]{l c | c | c | c | c | c }
+	& & \multicolumn{5}{c}{Durch die Nutzung von Google Diensten}\\
+	& & \multicolumn{5}{c}{gebe ich zu viel meiner Privatsphäre auf}\\\hline
+	& & 1 & 2 & 3 & 4 & 5\\\hline
+	Bietet Google auf & Ja & 53 & 158 & 248 & 172 & 104 \\
+	Nutzer zugeschnittene & Nein & 3 & 6 & 11 & 4 & 2 \\
+	Werbung an? & Weiß nicht & 8 & 24 & 38 & 16 & 9 \\
+	& Gesamt & 64 & 188 & 297 & 192 & 116\\ \hline \hline
+	Chi-Quadrat: & 6,95 & & & & &\\
+	Signifikanz: & 0,54 & & & & &\\
+	Nominal bzgl. Phi: & 0,09&&&&&\\ \hline
+	\end{tabular}
+	\caption{Durch die Nutzung von Google Diensten gebe ich zu viel meiner Privatsphäre auf}\label{4sadsprivacy}
+\end{table}
+
+Wenn man die gleiche Rechnung mit \glqq Bietet Google auf Nutzer zugeschnittene Suchergebnisse an?\grqq\ statt \glqq Werbung\grqq\ durchführt, ergibt sich eine etwas stärkere Korrelation mit $\phi = 0,17$, was geringen Korrelation entspricht. Dieser Wert ist mit einer Signifikanz von 0,002 statistisch signifikant.
+
+Die Hypothese kann also angenommen werden, die Korrelation ist allerdings nur sehr schwach.
+
+\textit{Je höher das Vertrauen in Google ist, desto geringer wird das Risiko eingeschätzt. (H3, \ref{itm:H2})}
+
+Hier lässt sich mithilfe der Pearson-Korrelation \ref{pearson} zwischen \glqq Meine Daten sind bei Google sicher\grqq\ und \glqq Google bietet mir ausreichen Möglichkeiten meine Privatsphäre zu schützen\grqq\ eine Korrelation von 0,58 berechnen. Dieser Wert gilt als ein hoher Zusammenhang. Des weiteren ergibt sich eine zweiseitige Signifikanz von 0,00 - somit ist diese Korrelation statistisch signifikant. Damit lässt sich die Hypothese akzeptieren.
 
 \section{Forschungsfragen}
 
